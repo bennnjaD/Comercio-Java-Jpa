@@ -56,7 +56,22 @@ public class Venta implements Serializable {
     }
     
     public int calcularGanancia() {
+        if (producto.isPorPeso()) {
+            double kilos = cantidad / 1000.0; // Convertir gramos a kilos
+            double precioCompraTotal = this.getPrecioCompra() * kilos;
+            double precioVentaTotal = precioVenta * kilos;
+            return (int) (precioVentaTotal - precioCompraTotal);
+    } else {
         return (precioVenta - precioCompra) * cantidad;
+    }
+    }
+    
+    public double calcularPlataObtenida() {
+    if (producto.isPorPeso()) {
+        double kilos = cantidad / 1000.0; // Convertir gramos a kilos
+        return precioVenta * kilos; // Calcular el total obtenido por la venta
+    }
+    return precioVenta * cantidad; // Caso cuando se vende por unidad
     }
     
     public LocalDate getFecha() {

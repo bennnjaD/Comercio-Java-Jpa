@@ -10,13 +10,10 @@ import java.util.concurrent.TimeUnit;
 
 public class GestorVentas {
     
-    private Controladora control;
     private List<Venta> ventas;
-    private ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
     
     public GestorVentas () {
         ventas = new ArrayList<>();
-        programarTareaDiaria();
     }
     
     public List<Venta> getVentas() {
@@ -33,27 +30,15 @@ public class GestorVentas {
                 .sum();
     }
     
+    public double calcularDineroDelDia() {
+        return ventas.stream()
+                .mapToDouble(v -> v.calcularPlataObtenida())
+                .sum();
+    }
+    
     public void vaciarVentas() {
         ventas.clear();
     }
-    
-    private void programarTareaDiaria() {
-        
-        LocalTime ahora = LocalTime.now();
-        long hastaMediodia = LocalTime.of(23, 59).toSecondOfDay() - ahora.toSecondOfDay();
-        
-        scheduler.scheduleAtFixedRate(this::guardarGananciasDelDia, hastaMediodia, TimeUnit.DAYS.toSeconds(1), TimeUnit.SECONDS);
-    }
-
-    private void guardarGananciasDelDia() {
-
-        String gananciasTotales = String.valueOf(calcularGananciaTotal());
-
-        control.agregarGanancia(gananciasTotales);
-        
-        ventas.clear();
-    }
-    
     
 }
 

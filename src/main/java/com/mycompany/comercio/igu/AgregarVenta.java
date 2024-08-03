@@ -56,6 +56,7 @@ public class AgregarVenta extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jComboBoxMedioDePago = new javax.swing.JComboBox<>();
+        btnVolverAtras = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -130,6 +131,13 @@ public class AgregarVenta extends javax.swing.JFrame {
             }
         });
 
+        btnVolverAtras.setText("Volver Atras");
+        btnVolverAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVolverAtrasActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -175,9 +183,11 @@ public class AgregarVenta extends javax.swing.JFrame {
                                     .addComponent(txtPrecioVenta))))
                         .addGap(59, 59, 59))))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(251, 251, 251)
-                .addComponent(btnAgregarVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(241, 241, 241)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnAgregarVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnVolverAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -208,9 +218,10 @@ public class AgregarVenta extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addComponent(btnAgregarVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36))
+                .addGap(18, 18, 18)
+                .addComponent(btnVolverAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -227,7 +238,7 @@ public class AgregarVenta extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
@@ -276,6 +287,13 @@ public class AgregarVenta extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxMedioDePagoActionPerformed
 
+    private void btnVolverAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverAtrasActionPerformed
+        SeleccionarProductos selec = new SeleccionarProductos();
+        selec.setVisible(true);
+        selec.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_btnVolverAtrasActionPerformed
+
     public void mostrarMensaje(String mensaje, String tipo, String titulo){
         JOptionPane optionPane = new JOptionPane(mensaje);
         if (tipo.equals("Info")) {
@@ -290,6 +308,7 @@ public class AgregarVenta extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarVenta;
+    private javax.swing.JButton btnVolverAtras;
     private javax.swing.JComboBox<String> jComboBoxMedioDePago;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

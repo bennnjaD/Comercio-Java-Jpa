@@ -1,7 +1,6 @@
 
 package com.mycompany.comercio.logica;
 
-import com.mycompany.comercio.igu.Ganancias;
 import com.mycompany.comercio.logica.Venta.MedioDePago;
 import com.mycompany.comercio.persistencia.ControladoraPersistencia;
 import java.time.LocalDate;
@@ -11,9 +10,9 @@ public class Controladora {
     
     ControladoraPersistencia controlPersis = new ControladoraPersistencia();
     
-    public void agregarProducto(String nombreProducto, String marcaProducto, int precioProducto, String categoria) {
+    public void agregarProducto(String nombreProducto, String marcaProducto, int precioProducto, String categoria, boolean tipoProd) {
         
-        Producto producto = new Producto(nombreProducto, marcaProducto, precioProducto, categoria);
+        Producto producto = new Producto(nombreProducto, marcaProducto, precioProducto, categoria, tipoProd);
         
         controlPersis.agregarProducto(producto);
         

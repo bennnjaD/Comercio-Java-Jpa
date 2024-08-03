@@ -19,6 +19,7 @@ com\mycompany\comercio\igu\VentasTotales$4.class
 com\mycompany\comercio\igu\SeleccionarProductos$2.class
 com\mycompany\comercio\igu\SeleccionarProductos$7.class
 com\mycompany\comercio\igu\ModifProducto.class
+com\mycompany\comercio\igu\Ventas$9.class
 com\mycompany\comercio\igu\VentasTotales.class
 com\mycompany\comercio\igu\Productos.class
 com\mycompany\comercio\igu\AgregarVenta.class
@@ -49,6 +50,7 @@ com\mycompany\comercio\igu\Ganancias$1.class
 com\mycompany\comercio\igu\Principal$1.class
 com\mycompany\comercio\igu\SeleccionarProductos$1.class
 com\mycompany\comercio\logica\ProductoId.class
+com\mycompany\comercio\igu\AgregarVenta$8.class
 com\mycompany\comercio\logica\Ganancia.class
 com\mycompany\comercio\persistencia\GananciaJpaController.class
 com\mycompany\comercio\logica\GestorVentas.class
@@ -79,6 +81,7 @@ com\mycompany\comercio\igu\Principal$2.class
 com\mycompany\comercio\igu\Ganancias$3.class
 com\mycompany\comercio\logica\Venta.class
 com\mycompany\comercio\igu\ModifVenta$5.class
+com\mycompany\comercio\igu\Productos$13.class
 com\mycompany\comercio\logica\Producto.class
 com\mycompany\comercio\persistencia\VentaJpaController.class
 com\mycompany\comercio\igu\AgregarVenta$6.class

@@ -1,4 +1,3 @@
-
 package com.mycompany.comercio.logica;
 
 import javax.persistence.Entity;
@@ -21,14 +20,16 @@ public class Producto implements Serializable {
 
     private int precioCompra;
     private String categoria;
+    private boolean porPeso; 
 
     public Producto() {}
 
-    public Producto(String nombre, String marca, int precioCompra, String categoria) {
+    public Producto(String nombre, String marca, int precioCompra, String categoria, boolean porPeso) {
         this.nombre = nombre;
         this.marca = marca;
         this.precioCompra = precioCompra;
         this.categoria = categoria;
+        this.porPeso = porPeso;
     }
 
     // Getters y setters
@@ -56,13 +57,19 @@ public class Producto implements Serializable {
         this.precioCompra = precioCompra;
     }
     
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
-    }
-    
     public String getCategoria() {
         return categoria;
     }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public boolean isPorPeso() {
+        return porPeso;
+    }
+
+    public void setPorPeso(boolean porPeso) {
+        this.porPeso = porPeso;
+    }
 }
-
-
