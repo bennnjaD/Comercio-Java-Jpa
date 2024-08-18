@@ -10,9 +10,9 @@ public class Controladora {
     
     ControladoraPersistencia controlPersis = new ControladoraPersistencia();
     
-    public void agregarProducto(String nombreProducto, String marcaProducto, int precioProducto, String categoria, boolean tipoProd) {
+    public void agregarProducto(String nombreProducto, String marcaProducto, int precioProducto, int precioVenta, String categoria, boolean tipoProd) {
         
-        Producto producto = new Producto(nombreProducto, marcaProducto, precioProducto, categoria, tipoProd);
+        Producto producto = new Producto(nombreProducto, marcaProducto, precioProducto, precioVenta, categoria, tipoProd);
         
         controlPersis.agregarProducto(producto);
         

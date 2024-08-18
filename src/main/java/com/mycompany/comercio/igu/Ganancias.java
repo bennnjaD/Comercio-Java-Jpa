@@ -197,7 +197,7 @@ public class Ganancias extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVolverAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverAtrasActionPerformed
-        Principal principal = new Principal();
+        DashBoard principal = new DashBoard();
         principal.setVisible(true);
         principal.setLocationRelativeTo(null);
         this.dispose();

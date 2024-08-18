@@ -130,9 +130,6 @@ public class ModifProducto extends javax.swing.JFrame {
         control.modificarProducto(producto, nombreProducto, marcaProducto, precioProducto, categoria);
         
         mostrarMensaje("Edicion realizada correctamente", "Info", "Edicion exitosa");
-        Productos produ = new Productos();
-        produ.setVisible(true);
-        produ.setLocationRelativeTo(null);
         
         this.dispose();
     }//GEN-LAST:event_btnModificarActionPerformed

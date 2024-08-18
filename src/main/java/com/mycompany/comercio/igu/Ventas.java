@@ -314,7 +314,7 @@ public class Ventas extends javax.swing.JFrame {
     }//GEN-LAST:event_btnActualizarActionPerformed
 
     private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
-        Principal princ = new Principal();
+        DashBoard princ = new DashBoard();
         princ.setVisible(true);
         princ.setLocationRelativeTo(null);
         this.dispose();

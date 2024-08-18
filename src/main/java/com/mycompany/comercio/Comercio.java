@@ -1,12 +1,12 @@
 
 package com.mycompany.comercio;
 
-import com.mycompany.comercio.igu.Principal;
+import com.mycompany.comercio.igu.DashBoard;
 
 public class Comercio {
 
     public static void main(String[] args) {
-        Principal princ = new Principal();
+        DashBoard princ = new DashBoard();
         princ.setVisible(true);
         princ.setLocationRelativeTo(null);
     }

@@ -19,15 +19,17 @@ public class Producto implements Serializable {
     private String marca;
 
     private int precioCompra;
+    private int precioVenta;
     private String categoria;
     private boolean porPeso; 
 
     public Producto() {}
 
-    public Producto(String nombre, String marca, int precioCompra, String categoria, boolean porPeso) {
+    public Producto(String nombre, String marca, int precioCompra, int precioVenta, String categoria, boolean porPeso) {
         this.nombre = nombre;
         this.marca = marca;
         this.precioCompra = precioCompra;
+        this.precioVenta = precioVenta;
         this.categoria = categoria;
         this.porPeso = porPeso;
     }
@@ -55,6 +57,14 @@ public class Producto implements Serializable {
 
     public void setPrecioCompra(int precioCompra) {
         this.precioCompra = precioCompra;
+    }
+    
+    public int getPrecioVenta() {
+        return precioVenta;
+    }
+
+    public void setPrecioVenta(int precioVenta) {
+        this.precioVenta = precioVenta;
     }
     
     public String getCategoria() {
