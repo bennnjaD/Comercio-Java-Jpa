@@ -9,6 +9,7 @@ import java.util.List;
 public class Controladora {
     
     ControladoraPersistencia controlPersis = new ControladoraPersistencia();
+    GestorVentas gestor = new GestorVentas();
     
     public void agregarProducto(String nombreProducto, String marcaProducto, int precioProducto, int precioVenta, String categoria, boolean tipoProd) {
         
@@ -111,6 +112,17 @@ public class Controladora {
 
     public List<Ganancia> traerGananciasDelMes() {
         return controlPersis.traerGananciasDelMes();
+    }
+
+    public String calcularGananciaTotal(List<Venta> listaVentas) {
+        gestor.setVentas(listaVentas);
+        return String.valueOf(gestor.calcularGananciaTotal());
+    }
+
+    public String calcularGananciaDelDia(List<Venta> listaVentas) {
+        gestor.setVentas(listaVentas);
+        
+        return String.valueOf(gestor.calcularDineroDelDia());
     }
 
 

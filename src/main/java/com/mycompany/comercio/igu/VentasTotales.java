@@ -171,9 +171,7 @@ public class VentasTotales extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void btnVolverAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverAtrasActionPerformed
-        Ventas ventas = new Ventas();
-        ventas.setVisible(true);
-        ventas.setLocationRelativeTo(null);
+
         this.dispose();
     }//GEN-LAST:event_btnVolverAtrasActionPerformed
 

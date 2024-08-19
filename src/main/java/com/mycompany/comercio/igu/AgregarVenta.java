@@ -248,9 +248,6 @@ public class AgregarVenta extends javax.swing.JFrame {
         control.agregarVenta(producto, cantidad, precioVenta, medioDePago);
         
         mostrarMensaje("Se agrego correctamente", "Info", "Agregacion exitosa");
-        Ventas ventas = new Ventas();
-        ventas.setVisible(true);
-        ventas.setLocationRelativeTo(null);
         
         this.dispose();
 

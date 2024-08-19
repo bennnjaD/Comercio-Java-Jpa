@@ -295,9 +295,6 @@ public class SeleccionarProductos extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBuscarPorNomActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-        Ventas ventas = new Ventas();
-        ventas.setVisible(true);
-        ventas.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_btnVolverActionPerformed
 

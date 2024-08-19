@@ -249,9 +249,6 @@ public class ModifVenta extends javax.swing.JFrame {
         control.modificarVenta(venta, cantidad, precioVenta, medioDePago);
         
         mostrarMensaje("Edicion realizada correctamente", "Info", "Edicion exitosa");
-        Ventas ventas = new Ventas();
-        ventas.setVisible(true);
-        ventas.setLocationRelativeTo(null);
         
         this.dispose();
     }//GEN-LAST:event_btnModificarVentaActionPerformed
