@@ -3,6 +3,8 @@
 Este proyecto es una aplicación de escritorio desarrollada en Java que permite gestionar productos, ventas y ganancias de un comercio. 
 Está construido utilizando JPA para la persistencia de datos y se conecta a una base de datos MySQL.
 
+
+
 ## Requisitos
 
 Antes de comenzar, asegúrate de tener instalados los siguientes programas:
@@ -46,5 +48,22 @@ Antes de comenzar, asegúrate de tener instalados los siguientes programas:
    - Utiliza tu IDE para compilar y ejecutar la aplicación.
 
 
+# Ventana Principal
 
+![Principal](https://github.com/user-attachments/assets/6ed43fb3-9b34-420a-bbb8-6a201d355da1)
+
+
+# Ventana Productos
+
+![Productos](https://github.com/user-attachments/assets/14681928-9d35-42e8-82de-4a0eb701280b)
+
+
+# Ventana Ventas
+
+![Ventas](https://github.com/user-attachments/assets/37463482-b440-45f1-8400-caf0af2c837a)
+
+
+# Ventana Ganancias
+
+![Ganancias](https://github.com/user-attachments/assets/3245f7e7-8c13-4511-b549-6df188051fc2)
 
