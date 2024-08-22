@@ -196,42 +196,36 @@ public class Productos extends javax.swing.JPanel {
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
-        if (tablaProductos.getRowCount() > 0) {
-            if (tablaProductos.getSelectedRow() !=-1) {
+        
+        if (Utils.esFilaSeleccionada(tablaProductos)) {
+               
                 String nombreProducto = String.valueOf (tablaProductos.getValueAt(tablaProductos.getSelectedRow(), 0));
                 String marcaProducto = String.valueOf(tablaProductos.getValueAt(tablaProductos.getSelectedRow(), 1));
                 
-                ModifProducto modif = new ModifProducto(nombreProducto, marcaProducto);
+                ModifProducto modif = new ModifProducto(nombreProducto, marcaProducto, this);
                 modif.setVisible(true);
                 modif.setLocationRelativeTo(null);
-                
-                
+              
             }
             else {
-                Utils.mostrarMensaje("No selecciono un registro para modificar" , "Error" ,  "Error al modificar");
-            }
-        }
-        else {
-            Utils.mostrarMensaje("La tabla esta vacia, no se puede modificar", "Error", "Error al modificar");
+                Utils.mostrarMensajeModificacion(tablaProductos);
         }
     }//GEN-LAST:event_btnModificarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        if (tablaProductos.getRowCount() > 0) {
-            if (tablaProductos.getSelectedRow() !=-1) {
-                String nombreProducto = String.valueOf (tablaProductos.getValueAt(tablaProductos.getSelectedRow(), 0));
-                String marcaProducto = String.valueOf(tablaProductos.getValueAt(tablaProductos.getSelectedRow(), 1));
-                control.borrarProducto(nombreProducto, marcaProducto);
-                Utils.mostrarMensaje ("Producto borrado correctamente" , "Info", "Borrado Exitoso");
-                cargarTabla();
+        if (Utils.esFilaSeleccionada(tablaProductos)) {
+            String nombreProducto = String.valueOf (tablaProductos.getValueAt(tablaProductos.getSelectedRow(), 0));
+            String marcaProducto = String.valueOf(tablaProductos.getValueAt(tablaProductos.getSelectedRow(), 1));
+                
+                if(Utils.confirmarEliminacion(this)) {
+                    control.borrarProducto(nombreProducto, marcaProducto);
+                    Utils.mostrarMensaje("Producto borrado correctamente", "Info", "Borrado Exitoso");
+                    cargarTabla();
+                }
+        } else {
+                Utils.mostrarMensajeError(tablaProductos);
             }
-            else {
-                Utils.mostrarMensaje("No selecciono un registro para eliminar" , "Error" ,  "Error al eliminar");
-            }
-        }
-        else {
-            Utils.mostrarMensaje("La tabla esta vacia, no se puede eliminar", "Error", "Error al eliminar");
-        }
+        
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void textBuscadorProducto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textBuscadorProducto1ActionPerformed
@@ -313,7 +307,7 @@ public class Productos extends javax.swing.JPanel {
     model.setRowCount(0); 
 
     for (Producto p : productos) {
-        model.addRow(new Object[]{p.getNombre(), p.getMarca(), p.getPrecioCompra()});
+        model.addRow(new Object[]{p.getNombre(), p.getMarca(), p.getPrecioCompra(), p.getPrecioVenta(), p.getCategoria()});
     }
     }
         

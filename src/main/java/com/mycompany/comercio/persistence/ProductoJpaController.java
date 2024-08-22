@@ -138,11 +138,11 @@ public class ProductoJpaController implements Serializable {
         }
     }
 
-    public List<Producto> findProductosByNombre(String nombre) {
+    public List<Producto> findProductosByNombre(String nombreParcial) {
         EntityManager em = getEntityManager();
         try {
-            Query query = em.createQuery("SELECT p FROM Producto p WHERE p.nombre = :nombre");
-            query.setParameter("nombre", nombre);
+            Query query = em.createQuery("SELECT p FROM Producto p WHERE p.nombre LIKE :nombreParcial");
+            query.setParameter("nombreParcial", "%" + nombreParcial + "%");
             return query.getResultList();
         } finally {
             em.close();

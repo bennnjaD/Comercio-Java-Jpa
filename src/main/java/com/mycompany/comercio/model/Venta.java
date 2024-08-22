@@ -29,6 +29,7 @@ public class Venta implements Serializable {
     private int precioCompra;
     private int precioVenta;
     private MedioDePago medioDePago;
+    private boolean esPorPeso;
     
     public Venta(){};
     
@@ -39,6 +40,7 @@ public class Venta implements Serializable {
         this.precioVenta = precioVenta;
         this.precioCompra = precioCompra;
         this.medioDePago = medioDePago;
+        this.esPorPeso = producto.isPorPeso();
     }
 
     public void setCantidad(int cantidad) {
@@ -48,6 +50,10 @@ public class Venta implements Serializable {
     public void setPrecioVenta(int precioVenta) {
         this.precioVenta = precioVenta;
     }
+
+    public boolean isPorPeso() {
+        return esPorPeso;
+    }
     
     public enum MedioDePago {
     EFECTIVO,
@@ -55,7 +61,7 @@ public class Venta implements Serializable {
     }
     
     public int calcularGanancia() {
-        if (producto.isPorPeso()) {
+        if (this.isPorPeso()) {
             double kilos = cantidad / 1000.0; // Convertir gramos a kilos
             double precioCompraTotal = this.getPrecioCompra() * kilos;
             double precioVentaTotal = precioVenta * kilos;
@@ -66,7 +72,7 @@ public class Venta implements Serializable {
     }
     
     public double calcularPlataObtenida() {
-    if (producto.isPorPeso()) {
+    if (this.isPorPeso()) {
         double kilos = cantidad / 1000.0; // Convertir gramos a kilos
         return precioVenta * kilos; // Calcular el total obtenido por la venta
     }

@@ -4,15 +4,19 @@ package com.mycompany.comercio.gui;
 import com.mycompany.comercio.controller.Controladora;
 import com.mycompany.comercio.model.Producto;
 import com.mycompany.comercio.utils.Utils;
+import javax.swing.JFrame;
 
 public class ModifProducto extends javax.swing.JFrame {
     
     Controladora control = null;
     Producto producto = new Producto();
+    Productos prodVentana = new Productos();
     
-    ModifProducto(String nombreProducto, String marcaProducto) {
+    ModifProducto(String nombreProducto, String marcaProducto, Productos p) {
         control = new Controladora();
+        prodVentana = p;
         initComponents();
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         cargarDatosProducto(nombreProducto, marcaProducto);
     }
 
@@ -29,6 +33,8 @@ public class ModifProducto extends javax.swing.JFrame {
         txtNombreProducto = new javax.swing.JTextField();
         txtCategoria = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        txtPrecioVenta = new javax.swing.JTextField();
         btnModificar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -45,6 +51,9 @@ public class ModifProducto extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setText("Categoria:");
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel5.setText("Precio Venta:");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -55,13 +64,15 @@ public class ModifProducto extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(jLabel3)
                     .addComponent(jLabel4)
-                    .addComponent(jLabel1))
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel5))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtPrecioProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtNombreProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtMarcaProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPrecioVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(57, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -80,10 +91,14 @@ public class ModifProducto extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(txtPrecioProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtPrecioVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(txtCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(46, 46, 46))
         );
 
         btnModificar.setText("Modificar");
@@ -103,18 +118,18 @@ public class ModifProducto extends javax.swing.JFrame {
                         .addGap(46, 46, 46)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(207, 207, 207)
-                        .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(214, 214, 214)
+                        .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(70, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addGap(47, 47, 47))
         );
 
         pack();
@@ -124,10 +139,12 @@ public class ModifProducto extends javax.swing.JFrame {
         String nombreProducto = txtNombreProducto.getText();
         String marcaProducto = txtMarcaProducto.getText();
         int precioProducto = Integer.parseInt(txtPrecioProducto.getText());
+        int precioVenta = Integer.parseInt(txtPrecioVenta.getText());
         String categoria = txtCategoria.getText();
         
-        control.modificarProducto(producto, nombreProducto, marcaProducto, precioProducto, categoria);
+        control.modificarProducto(producto, nombreProducto, marcaProducto, precioProducto, precioVenta, categoria);
         
+        prodVentana.cargarTabla();
         Utils.mostrarMensaje("Edicion realizada correctamente", "Info", "Edicion exitosa");
         
         this.dispose();
@@ -141,11 +158,13 @@ public class ModifProducto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txtCategoria;
     private javax.swing.JTextField txtMarcaProducto;
     private javax.swing.JTextField txtNombreProducto;
     private javax.swing.JTextField txtPrecioProducto;
+    private javax.swing.JTextField txtPrecioVenta;
     // End of variables declaration//GEN-END:variables
 
     private void cargarDatosProducto(String nombreProducto, String marcaProducto) {
@@ -154,6 +173,7 @@ public class ModifProducto extends javax.swing.JFrame {
         txtNombreProducto.setText(producto.getNombre());
         txtMarcaProducto.setText(producto.getMarca());
         txtPrecioProducto.setText(String.valueOf(producto.getPrecioCompra()));
+        txtPrecioVenta.setText(String.valueOf(producto.getPrecioVenta()));
         txtCategoria.setText(producto.getCategoria());
     }
 }

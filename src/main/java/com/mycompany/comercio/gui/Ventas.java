@@ -213,40 +213,34 @@ public class Ventas extends javax.swing.JPanel {
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
-        if (tablaVentas.getRowCount() > 0) {
-            if (tablaVentas.getSelectedRow() !=-1) {
-                long idVenta = (long) tablaVentas.getModel().getValueAt(tablaVentas.getSelectedRow(), 0); // Obtener el ID oculto
-                
-                ModifVenta modif = new ModifVenta(idVenta);
+        
+        if (Utils.esFilaSeleccionada(tablaVentas)) {
+                long idVenta = obtenerIdVentaSeleccionada();
+                ModifVenta modif = new ModifVenta(idVenta, this);
                 modif.setVisible(true);
                 modif.setLocationRelativeTo(null);
                 
             }
             else {
-                Utils.mostrarMensaje("No selecciono un registro para modificar" , "Error" ,  "Error al modificar");
-            }
-        }
-        else {
-            Utils.mostrarMensaje("La tabla esta vacia, no se puede modificar", "Error", "Error al modificar");
+                Utils.mostrarMensajeModificacion(tablaVentas);
         }
     }//GEN-LAST:event_btnModificarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-         if (tablaVentas.getRowCount() > 0) {
-            if (tablaVentas.getSelectedRow() != -1) {
-                 long idVenta = (long) tablaVentas.getModel().getValueAt(tablaVentas.getSelectedRow(), 0); // Obtener el ID oculto
-      
-                  control.borrarVenta(idVenta);
-                   Utils.mostrarMensaje("Venta borrada correctamente", "Info", "Borrado Exitoso");
-                   cargarTablaVentas(); // Método para recargar la tabla de ventas
-            } else {
-             Utils.mostrarMensaje("No seleccionó un registro para eliminar", "Error", "Error al eliminar");
-             }
-        }   else {
-            Utils.mostrarMensaje("La tabla está vacía, no se puede eliminar", "Error", "Error al eliminar");
+    
+        if (Utils.esFilaSeleccionada(tablaVentas)) {
+            long idVenta = obtenerIdVentaSeleccionada();
+                if (Utils.confirmarEliminacion(this)) {
+                    eliminarVenta(idVenta);
+                    Utils.mostrarMensaje("Venta borrada correctamente", "Info", "Borrado Exitoso");
+                    cargarTablaVentas();
+                }
+        } else {
+             Utils.mostrarMensajeError(tablaVentas);
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
-
+    
+ 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
         cargarTablaVentas();
 
@@ -299,11 +293,13 @@ public class Ventas extends javax.swing.JPanel {
     if (listaVentas != null) {
         actualizarGanancias(listaVentas);
         for (Venta venta : listaVentas) {
+            String cantidadConUnidad = venta.isPorPeso() ? venta.getCantidad() + "gr" : String.valueOf(venta.getCantidad());
+            
             Object[] object = {
                 venta.getId(),
                 venta.getNombre(), 
                 venta.getMarca(),
-                venta.getCantidad(),
+                cantidadConUnidad,
                 venta.getCategoria(),
                 venta.getPrecioCompra(),
                 venta.getPrecioVenta(),
@@ -344,5 +340,14 @@ public class Ventas extends javax.swing.JPanel {
         StyleConstants.setFontSize(attributes, fontSize);
         textPane.setCharacterAttributes(attributes, true);
     }
-    
+
+    private long obtenerIdVentaSeleccionada() {
+        return (long) tablaVentas.getModel().getValueAt(tablaVentas.getSelectedRow(), 0);
+    }
+
+    private void eliminarVenta(long idVenta) {
+        control.borrarVenta(idVenta);
+    }
+
+
 }

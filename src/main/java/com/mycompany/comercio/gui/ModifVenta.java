@@ -16,9 +16,11 @@ public class ModifVenta extends javax.swing.JFrame {
     
     Controladora control = null;
     Venta venta = new Venta();
+    Ventas ventasVentana;
     
-    public ModifVenta(long idVenta) {
+    public ModifVenta(long idVenta, Ventas v) {
         control = new Controladora();
+        ventasVentana = v;
         initComponents();
         cargarDatosVenta(idVenta);
     }
@@ -208,9 +210,9 @@ public class ModifVenta extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(27, 27, 27)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -249,6 +251,7 @@ public class ModifVenta extends javax.swing.JFrame {
         control.modificarVenta(venta, cantidad, precioVenta, medioDePago);
         
         Utils.mostrarMensaje("Edicion realizada correctamente", "Info", "Edicion exitosa");
+        ventasVentana.cargarTablaVentas();
         
         this.dispose();
     }//GEN-LAST:event_btnModificarVentaActionPerformed
