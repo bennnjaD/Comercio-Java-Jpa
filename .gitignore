@@ -1,0 +1,36 @@
+# Archivos de configuración del entorno
+.env
+
+# Directorios y archivos generados por el IDE (IntelliJ, Eclipse, NetBeans)
+.idea/
+*.iml
+*.ipr
+*.iws
+*.suo
+*.class
+*.project
+*.classpath
+*.settings/
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+.classpath
+.project
+.settings/
+
+# Directorios de compilación
+target/
+out/
+bin/
+
+# Archivos generados por Maven o Gradle
+.mvn/
+.gradle/
+build/
+
+# Archivos de logs y temporales
+*.log
+*.temp
+*.tmp
