@@ -4,6 +4,7 @@ package com.mycompany.comercio.gui;
 import com.mycompany.comercio.controller.Controladora;
 import com.mycompany.comercio.model.Producto;
 import com.mycompany.comercio.model.Venta.MedioDePago;
+import com.mycompany.comercio.utils.NumericDocumentFilter;
 import com.mycompany.comercio.utils.Utils;
 import java.awt.Color;
 import java.util.Arrays;
@@ -12,6 +13,7 @@ import java.util.stream.Collectors;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
+import javax.swing.text.AbstractDocument;
 
 
 public class AgregarVenta extends javax.swing.JFrame {
@@ -329,5 +331,8 @@ public class AgregarVenta extends javax.swing.JFrame {
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         
         txtAclaracion.setForeground(Color.lightGray);
+        
+        ((AbstractDocument) txtPrecioVenta.getDocument()).setDocumentFilter(new NumericDocumentFilter());
+        ((AbstractDocument) txtCantidad.getDocument()).setDocumentFilter(new NumericDocumentFilter());
     }
 }

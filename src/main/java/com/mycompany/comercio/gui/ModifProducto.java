@@ -3,8 +3,10 @@ package com.mycompany.comercio.gui;
 
 import com.mycompany.comercio.controller.Controladora;
 import com.mycompany.comercio.model.Producto;
+import com.mycompany.comercio.utils.NumericDocumentFilter;
 import com.mycompany.comercio.utils.Utils;
 import javax.swing.JFrame;
+import javax.swing.text.AbstractDocument;
 
 public class ModifProducto extends javax.swing.JFrame {
     
@@ -16,7 +18,7 @@ public class ModifProducto extends javax.swing.JFrame {
         control = new Controladora();
         prodVentana = p;
         initComponents();
-        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        configAdicionales();
         cargarDatosProducto(nombreProducto, marcaProducto);
     }
 
@@ -175,5 +177,11 @@ public class ModifProducto extends javax.swing.JFrame {
         txtPrecioProducto.setText(String.valueOf(producto.getPrecioCompra()));
         txtPrecioVenta.setText(String.valueOf(producto.getPrecioVenta()));
         txtCategoria.setText(producto.getCategoria());
+    }
+
+    private void configAdicionales() {
+        ((AbstractDocument) txtPrecioProducto.getDocument()).setDocumentFilter(new NumericDocumentFilter());
+        ((AbstractDocument) txtPrecioVenta.getDocument()).setDocumentFilter(new NumericDocumentFilter());
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 }

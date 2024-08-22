@@ -113,8 +113,8 @@ public class VentasTotales extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(276, 276, 276)
-                .addComponent(btnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(btnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addGap(382, 382, 382))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -162,13 +162,8 @@ public class VentasTotales extends javax.swing.JFrame {
         if (fechaSeleccionada == null || fechaSeleccionada.isEmpty()) {
             Utils.mostrarMensaje("Debe seleccionar una fecha para buscar", "Error", "Error al buscar");
             return;
-        }
-
-        List<Venta> ventas = control.buscarVentasPorFecha(fechaSeleccionada);
-
-        if (ventas.isEmpty()) {
-            Utils.mostrarMensaje("No se encontraron ventas en la fecha: " + fechaSeleccionada, "Info", "Búsqueda Vacía");
         } else {
+            List<Venta> ventas = control.buscarVentasPorFecha(fechaSeleccionada);
             cargarTablaPorVentas(ventas);
         }
     

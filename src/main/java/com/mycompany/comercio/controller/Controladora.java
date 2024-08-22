@@ -49,6 +49,8 @@ public class Controladora {
     }
 
     public void modificarProducto(Producto producto, String nombreProducto, String marcaProducto, int precioProducto, int precioVenta, String categoria) {
+        producto.setNombre(nombreProducto);
+        producto.setMarca(marcaProducto); 
         producto.setPrecioCompra(precioProducto);
         producto.setCategoria(categoria);
         producto.setPrecioVenta(precioVenta);

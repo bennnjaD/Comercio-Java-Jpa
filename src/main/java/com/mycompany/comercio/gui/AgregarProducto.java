@@ -2,9 +2,11 @@
 package com.mycompany.comercio.gui;
 
 import com.mycompany.comercio.controller.Controladora;
+import com.mycompany.comercio.utils.NumericDocumentFilter;
 import com.mycompany.comercio.utils.Utils;
 import java.awt.Color;
 import javax.swing.JFrame;
+import javax.swing.text.AbstractDocument;
 
 
 
@@ -20,6 +22,7 @@ public class AgregarProducto extends javax.swing.JFrame {
         initComponents();
         configAdicionales();
         cargarTipoProductos();
+        
         
     }
 
@@ -228,7 +231,7 @@ public class AgregarProducto extends javax.swing.JFrame {
         int precioVenta = Integer.parseInt(txtPrecioVenta.getText());
         String categoria = txtCategoria.getText();
         String tipoProductoStr = (String) jComboBoxTipoProd.getSelectedItem();
-        boolean porPeso = tipoProductoStr.equals("Peso");
+        boolean porPeso = tipoProductoStr.equals("Gramos");
         
         control.agregarProducto(nombreProducto, marcaProducto, precioProducto, precioVenta, categoria, porPeso);
 
@@ -270,7 +273,9 @@ public class AgregarProducto extends javax.swing.JFrame {
     private void configAdicionales() {
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setResizable(false);
-        txtAclaracion.setForeground(Color.lightGray);    
+        txtAclaracion.setForeground(Color.lightGray);
+        ((AbstractDocument) txtPrecioProducto.getDocument()).setDocumentFilter(new NumericDocumentFilter());
+        ((AbstractDocument) txtPrecioVenta.getDocument()).setDocumentFilter(new NumericDocumentFilter());
     }
 
 
