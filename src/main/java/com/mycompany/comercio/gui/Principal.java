@@ -36,7 +36,7 @@ public class Principal extends javax.swing.JPanel {
         body.setPreferredSize(new java.awt.Dimension(1030, 540));
 
         image.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/3082031 (2).png"))); // NOI18N
+        image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/carrito.png"))); // NOI18N
 
         txtFirstSentence.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtFirstSentence.setText("Sistema de Gestión para un Comercio. ");

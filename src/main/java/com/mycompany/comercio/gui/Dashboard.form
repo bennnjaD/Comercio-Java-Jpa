@@ -117,7 +117,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/file-chart.png"/>
+                  <Image iconType="3" name="/ganancias.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Ganancias"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -179,7 +179,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/shopping-cart (2) (1).png"/>
+                  <Image iconType="3" name="/productos.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Productos"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -210,7 +210,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/calendar-multiple-check.png"/>
+                  <Image iconType="3" name="/ventas.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Ventas"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">

@@ -47,7 +47,7 @@ public class Dashboard extends javax.swing.JFrame {
         btnGanancias.setBackground(new java.awt.Color(21, 101, 192));
         btnGanancias.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         btnGanancias.setForeground(new java.awt.Color(255, 255, 255));
-        btnGanancias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/file-chart.png"))); // NOI18N
+        btnGanancias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ganancias.png"))); // NOI18N
         btnGanancias.setText("Ganancias");
         btnGanancias.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         btnGanancias.setBorderPainted(false);
@@ -79,7 +79,7 @@ public class Dashboard extends javax.swing.JFrame {
         btnProductos.setBackground(new java.awt.Color(21, 101, 192));
         btnProductos.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         btnProductos.setForeground(new java.awt.Color(255, 255, 255));
-        btnProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/shopping-cart (2) (1).png"))); // NOI18N
+        btnProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/productos.png"))); // NOI18N
         btnProductos.setText("Productos");
         btnProductos.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         btnProductos.setBorderPainted(false);
@@ -95,7 +95,7 @@ public class Dashboard extends javax.swing.JFrame {
         btnVentas.setBackground(new java.awt.Color(21, 101, 192));
         btnVentas.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         btnVentas.setForeground(new java.awt.Color(255, 255, 255));
-        btnVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/calendar-multiple-check.png"))); // NOI18N
+        btnVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventas.png"))); // NOI18N
         btnVentas.setText("Ventas");
         btnVentas.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         btnVentas.setBorderPainted(false);
