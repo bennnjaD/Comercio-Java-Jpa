@@ -1,8 +1,8 @@
 # Archivos de configuración del entorno
 .env
 
-# Directorios y archivos generados por el IDE (IntelliJ, Eclipse, NetBeans)
-.idea/
+# Directorios y archivos generados por el IDE 
+
 *.iml
 *.ipr
 *.iws
@@ -25,7 +25,7 @@ target/
 out/
 bin/
 
-# Archivos generados por Maven o Gradle
+# Archivos generados por Maven
 .mvn/
 .gradle/
 build/
@@ -34,3 +34,6 @@ build/
 *.log
 *.temp
 *.tmp
+
+# Ignorar el archivo de configuración de JPA
+src/main/resources/META-INF/persistence.xml
