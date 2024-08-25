@@ -223,7 +223,7 @@ public class Productos extends javax.swing.JPanel {
                     cargarTabla();
                 }
         } else {
-                Utils.mostrarMensajeError(tablaProductos);
+                Utils.mostrarMensajeEliminar(tablaProductos);
             }
         
     }//GEN-LAST:event_btnEliminarActionPerformed
@@ -281,7 +281,7 @@ public class Productos extends javax.swing.JPanel {
             }
         };
 
-        String titulos[] = {"Nombre Producto", "Marca Producto", "Precio Compra", "Precio Venta", "Categoria"};
+        String titulos[] = {"Nombre Producto", "Marca Producto", "Precio Compra", "Precio Venta", "Categoria", "Tipo Producto"};
         modeloTabla.setColumnIdentifiers(titulos);
 
         List<Producto> listaProductos = control.traerProductos();
@@ -293,13 +293,15 @@ public class Productos extends javax.swing.JPanel {
                         producto.getMarca(),
                         producto.getPrecioCompra(),
                         producto.getPrecioVenta(),
-                        producto.getCategoria()
+                        producto.getCategoria(),
+                        producto.getTipoProducto()
                 };
                 modeloTabla.addRow(object);
             }
         }
 
         tablaProductos.setModel(modeloTabla);
+        
     }
     
     private void cargarTabla(List<Producto> productos) {
@@ -307,7 +309,7 @@ public class Productos extends javax.swing.JPanel {
     model.setRowCount(0); 
 
     for (Producto p : productos) {
-        model.addRow(new Object[]{p.getNombre(), p.getMarca(), p.getPrecioCompra(), p.getPrecioVenta(), p.getCategoria()});
+        model.addRow(new Object[]{p.getNombre(), p.getMarca(), p.getPrecioCompra(), p.getPrecioVenta(), p.getCategoria(), p.getTipoProducto()});
     }
     }
         

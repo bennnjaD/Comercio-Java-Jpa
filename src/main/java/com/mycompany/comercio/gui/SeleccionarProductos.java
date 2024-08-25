@@ -326,7 +326,7 @@ public class SeleccionarProductos extends javax.swing.JFrame {
             }
         };
         
-        String titulos[] = {"Nombre Producto" , "Marca Producto", "Precio Producto", "Precio Venta", "Categoria"};
+        String titulos[] = {"Nombre Producto" , "Marca Producto", "Precio Producto", "Precio Venta", "Categoria", "Tipo Producto"};
         
         modeloTabla.setColumnIdentifiers(titulos);
         
@@ -338,7 +338,9 @@ public class SeleccionarProductos extends javax.swing.JFrame {
                                     producto.getMarca(),
                                     producto.getPrecioCompra(),
                                     producto.getPrecioVenta(),
-                                    producto.getCategoria()};
+                                    producto.getCategoria(),
+                                    producto.getTipoProducto()
+                };
                 modeloTabla.addRow(object);
             }
         }
@@ -352,7 +354,7 @@ public class SeleccionarProductos extends javax.swing.JFrame {
     model.setRowCount(0); 
 
         for (Producto p : productos) {
-            model.addRow(new Object[]{p.getNombre(), p.getMarca(), p.getPrecioCompra(), p.getPrecioVenta(), p.getCategoria()});
+            model.addRow(new Object[]{p.getNombre(), p.getMarca(), p.getPrecioCompra(), p.getPrecioVenta(), p.getCategoria(), p.getTipoProducto()});
         }
     }
 

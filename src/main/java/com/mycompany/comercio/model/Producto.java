@@ -82,4 +82,13 @@ public class Producto implements Serializable {
     public void setPorPeso(boolean porPeso) {
         this.porPeso = porPeso;
     }
+    
+    public String getTipoProducto() {
+        if (porPeso) {
+            return "Por KG";
+        } else  {
+            return "Unidad";
+        }
+          
+    }
 }

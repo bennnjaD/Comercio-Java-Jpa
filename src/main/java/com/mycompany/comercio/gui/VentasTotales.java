@@ -161,7 +161,7 @@ public class VentasTotales extends javax.swing.JFrame {
 
         if (fechaSeleccionada == null || fechaSeleccionada.isEmpty()) {
             Utils.mostrarMensaje("Debe seleccionar una fecha para buscar", "Error", "Error al buscar");
-            return;
+            
         } else {
             List<Venta> ventas = control.buscarVentasPorFecha(fechaSeleccionada);
             cargarTablaPorVentas(ventas);

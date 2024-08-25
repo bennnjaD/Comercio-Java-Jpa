@@ -48,12 +48,13 @@ public class Controladora {
         return controlPersis.traerProducto(nombreProducto, marcaProducto);
     }
 
-    public void modificarProducto(Producto producto, String nombreProducto, String marcaProducto, int precioProducto, int precioVenta, String categoria) {
+    public void modificarProducto(Producto producto, String nombreProducto, String marcaProducto, int precioProducto, int precioVenta, String categoria, boolean porPeso) {
         producto.setNombre(nombreProducto);
         producto.setMarca(marcaProducto); 
         producto.setPrecioCompra(precioProducto);
         producto.setCategoria(categoria);
         producto.setPrecioVenta(precioVenta);
+        producto.setPorPeso(porPeso);
         controlPersis.modificarProducto(producto);
     }
     

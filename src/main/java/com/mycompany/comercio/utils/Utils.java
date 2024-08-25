@@ -42,7 +42,7 @@ public class Utils {
     return respuesta == JOptionPane.YES_OPTION;
     }
     
-    public static void mostrarMensajeError(JTable tabla) {
+    public static void mostrarMensajeEliminar(JTable tabla) {
         if (tabla.getRowCount() == 0) {
             Utils.mostrarMensaje("La tabla está vacía, no se puede eliminar", "Error", "Error al eliminar");
         } 
@@ -53,19 +53,19 @@ public class Utils {
     
     public static void mostrarMensajeModificacion(JTable tabla) {
         if (tabla.getRowCount() == 0) {
-            Utils.mostrarMensaje("No selecciono un registro para modificar" , "Error" ,  "Error al modificar");
+            Utils.mostrarMensaje("La tabla está vacía, no se puede modificar" , "Error" ,  "Error al modificar");
         } 
         else {
-            Utils.mostrarMensaje("La tabla esta vacia, no se puede modificar", "Error", "Error al modificar");
+            Utils.mostrarMensaje("No seleccionó un registro para modificar", "Error", "Error al modificar");
         }
     }
     
     public static void mostrarMensajeAgregarProducto(JTable tabla) {
         if (tabla.getRowCount() == 0) {
-            Utils.mostrarMensaje("No selecciono un producto para agregar" , "Error" ,  "Error al agregar");
+            Utils.mostrarMensaje("La tabla esta vacia, no se puede agregar" , "Error" ,  "Error al agregar");
         } 
         else {
-            Utils.mostrarMensaje("La tabla esta vacia, no se puede agregar", "Error", "Error al agregar");
+            Utils.mostrarMensaje("No seleccionó un registro para Agregar", "Error", "Error al agregar");
         }
     }
     

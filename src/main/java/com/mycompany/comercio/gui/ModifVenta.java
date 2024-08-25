@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JFrame;
 
 
 
@@ -23,6 +24,7 @@ public class ModifVenta extends javax.swing.JFrame {
         ventasVentana = v;
         initComponents();
         cargarDatosVenta(idVenta);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
 

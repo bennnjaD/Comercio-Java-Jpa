@@ -236,7 +236,7 @@ public class Ventas extends javax.swing.JPanel {
                     cargarTablaVentas();
                 }
         } else {
-             Utils.mostrarMensajeError(tablaVentas);
+             Utils.mostrarMensajeEliminar(tablaVentas);
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
     

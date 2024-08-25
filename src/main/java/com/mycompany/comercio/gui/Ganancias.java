@@ -158,14 +158,9 @@ public class Ganancias extends javax.swing.JPanel {
 
         if (fechaSeleccionada == null || fechaSeleccionada.isEmpty()) {
             Utils.mostrarMensaje("Debe seleccionar una fecha para buscar", "Error", "Error al buscar");
-            return;
-        }
-
-        List<Ganancia> ganancias = control.buscarGananciasPorFecha(fechaSeleccionada);
-
-        if (ganancias.isEmpty()) {
-            Utils.mostrarMensaje("No se encontraron ventas en la fecha: " + fechaSeleccionada, "Info", "Búsqueda Vacía");
+            
         } else {
+            List<Ganancia> ganancias = control.buscarGananciasPorFecha(fechaSeleccionada);
             cargarTablaPorGanancias(ganancias);
         }
     }//GEN-LAST:event_btnBuscarPorFechaActionPerformed
