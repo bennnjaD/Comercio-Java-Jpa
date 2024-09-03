@@ -1,3 +1,73 @@
-# Ignorar persistence.xml de JPA
+# Maven target directory
+/target/
+
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# Eclipse project files
+/.classpath
+/.project
+/.settings/
+
+# IntelliJ IDEA project files
+/.idea/
+/*.iml
+/out/
+
+# NetBeans project files
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# VS Code directories
+/.vscode/
+/.vscode/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# Java-specific files
+*.class
+*.jar
+*.war
+*.ear
+
+# Database configuration files
 persistence.xml
+
+# Sensitive or environment-specific files
+.env
+.env.local
+.env.*.local
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
 
