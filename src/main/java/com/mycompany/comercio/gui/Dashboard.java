@@ -244,7 +244,7 @@ public class Dashboard extends javax.swing.JFrame {
         int year = now.getYear();
         int dia = now.getDayOfMonth();
         int month = now.getMonthValue();
-        String[] meses = {"Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto"," ;Septiembre"
+        String[] meses = {"Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre"
             ,"Octubre","Noviembre","Diciemrbre"};
         dateText.setText("Hoy es "+dia+" de "+meses[month - 1]+" de "+year);   
     }
