@@ -7,7 +7,7 @@ Está construido utilizando JPA para la persistencia de datos y se conecta a una
 
 ## Requisitos
 
-Antes de comenzar, asegúrate de tener instalados los siguientes programas:
+Para correr el programa debes tener instalados los siguientes programas:
 
 - **JDK 8 o superior**
 - **MySQL**
