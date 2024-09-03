@@ -1,0 +1,3 @@
+# Ignorar persistence.xml de JPA
+persistence.xml
+
